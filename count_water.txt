@@ -1,0 +1,26 @@
+1.先碰到一面墙
+2.碰到空气时开始计数
+3.碰到另一面墙的时候停止计数，加到总数里
+scan:
+for i in range(0,15):
+	//往左碰到墙先，防止数左边的空气
+	if(ram[i]!=0)&&(counting==false):
+		left_wall = true
+	//碰到空气了，左边也有墙，也没开始计数
+	if(ram[i]==0)&&(left_wall == true)&&(counting==false):
+		counting = true
+	//要是在计数，碰到空气了
+	if(ram[i]==0)&&(counting == true):
+		water++
+	//要是在计数，碰到右边墙了
+	if(ram[i]!=0)&&(counting == true):
+		total_water+=water
+		counting = false
+
+
+
+
+测试集：
+1.
+INPUT: 4,6,1,4,6,5,1,4,1,2,6,5,6,1,4,2
+OUTPUT:28

@@ -1,0 +1,41 @@
+reg5：RAM的地址
+寄存器6：RAM
+RAM放在第二位是读入，第三位是写入
+
+0 add
+1 sub
+2 and
+3 or
+4 not
+5 xor
+6 mul
+7 mov
+
+8 shr
+9 shl
+10 ror
+11 rol
+
+32 equal
+33 not equal
+34 less
+35 less or equal
+36 greater
+37 greater or equal
+38 jmp
+39 nop
+
+40 call
+41 ret
+
+48 push
+49 pop
+
+some examples:
+mov reg0 0 reg1
+mov input RAM 0（把input放到RAM和0寄存器里）
+mov RAM 0 output （把RAM放到output里）
+push reg0 0 0
+pop 0 0 reg1
+call 0 0 label
+ret 0 0 0
